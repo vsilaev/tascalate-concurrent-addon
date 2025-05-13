@@ -20,9 +20,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:git:git://github.com/vsilaev/tascalate-concurrent-jsr481.git</connection>
-		<developerConnection>scm:git:ssh://github.com:vsilaev/tascalate-concurrent-481.git</developerConnection>
-		<url>https://github.com/vsilaev/tascalate-concurrent.git</url>
+		<connection>scm:git:git://github.com/vsilaev/tascalate-concurrent-addon.git</connection>
+		<developerConnection>scm:git:ssh://github.com:vsilaev/tascalate-concurrent-addon.git</developerConnection>
+		<url>https://github.com/vsilaev/tascalate-concurrent-addon.git</url>
 	</scm>
 
 	<developers>
@@ -41,8 +41,8 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-    				<groupId>net.tascalate</groupId>
-	    			<artifactId>net.tascalate.concurrent</artifactId>
+    				<groupId>${project.groupId}</groupId>
+	    			<artifactId>${project.groupId}.concurrent</artifactId>
     				<version>${tascalate.concurrent.version}</version>
 			</dependency>
 			<dependency>
@@ -89,11 +89,8 @@
 						<artifactId>maven-javadoc-plugin</artifactId>
 						<version>3.11.2</version>
 						<configuration>
-							<jdkToolchain>
-								<version>1.8</version>
-								<vendor>Oracle</vendor>
-							</jdkToolchain>
-							<sourceFileExcludes>module-info.java</sourceFileExcludes>
+							<release>21</release>
+							<additionalOptions>--enable-preview</additionalOptions>
 						</configuration>	
 						<executions>
 							<execution>
@@ -126,8 +123,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>net.tascalate</groupId>
-    			<artifactId>net.tascalate.concurrent</artifactId>
+			<groupId>${project.groupId}</groupId>
+    			<artifactId>${project.groupId}.concurrent</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
